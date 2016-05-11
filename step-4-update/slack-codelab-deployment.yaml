@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1 
+kind: Deployment 
+metadata:
+  name: slack-codelab
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate  # Delete the existing pods before creating the new one.
+                    # This way we don't have two bots connected at once, which
+                    # is not desired for custom integrations.
+                    #
+                    # The RollingUpdate strategy should be used for Slack Apps,
+                    # which need to scale to multiple teams.
+  template:
+    metadata:
+      labels:
+        app: slack-codelab
+    spec:
+      containers:
+      - name: master
+        image: gcr.io/PROJECT_ID/slack-codelab:v2  # Replace PROJECT_ID
+                                                   # with your project ID.
+        volumeMounts:
+        - name: slack-token
+          mountPath: /etc/slack-token
+        env:
+        - name: slack_token_path
+          value: /etc/slack-token/slack-token
+      volumes:
+      - name: slack-token
+        secret:
+          secretName: slack-token

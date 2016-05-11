@@ -1,0 +1,19 @@
+{
+  "name": "cloud-slack-bot-example",
+  "version": "1.0.0",
+  "description": "A sample Slack Botkit bot.",
+  "main": "kittenbot.js",
+  "dependencies": {
+    "botkit": "0.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/googlecodelabs/cloud-slack-bot.git"
+  },
+  "author": "Google Inc.",
+  "license": "Apache-2.0"
+}
