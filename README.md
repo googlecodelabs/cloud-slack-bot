@@ -1,4 +1,4 @@
-# Google Sheets API Codelab
+# cloud-slack-bot
 
 This folder contains the source code for a Google I/O 2016 codelab.
 
