@@ -2,29 +2,32 @@
 
 ## Contributor License Agreements
 
-We'd love to accept your patches! Before we can take them, we
+We'd love to accept your sample apps and patches! Before we can take them, we
 have to jump a couple of legal hurdles.
 
-### Before you contribute
-Before we can use your code, you must sign the
-[Google Individual Contributor License Agreement](https://cla.developers.google.com/about/google-individual)
-(CLA), which you can do online. The CLA is necessary mainly because you own the
-copyright to your changes, even after your contribution becomes part of our
-codebase, so we need your permission to use and distribute your code. We also
-need to be sure of various other things—for instance that you'll tell us if you
-know that your code infringes on other people's patents. You don't have to sign
-the CLA until after you've submitted your code for review and a member has
-approved it, but you must do it before we can put your code into our codebase.
-Before you start working on a larger contribution, you should get in touch with
-us first through the issue tracker with your idea so that we can help out and
-possibly guide you. Coordinating up front makes it much easier to avoid
-frustration later on.
+Please fill out either the individual or corporate Contributor License Agreement
+(CLA).
 
-### Code reviews
-All submissions, including submissions by project members, require review. We
-use Github pull requests for this purpose.
+  * If you are an individual writing original source code and you're sure you
+    own the intellectual property, then you'll need to sign an [individual CLA]
+    (https://developers.google.com/open-source/cla/individual).
+  * If you work for a company that wants to allow you to contribute your work,
+    then you'll need to sign a [corporate CLA]
+    (https://developers.google.com/open-source/cla/corporate).
 
-### The small print
-Contributions made by corporations are covered by a different agreement than
-the one above, the
-[Software Grant and Corporate Contributor License Agreement](https://cla.developers.google.com/about/google-corporate).
+Follow either of the two links above to access the appropriate CLA and
+instructions for how to sign and return it. Once we receive it, we'll be able to
+accept your pull requests.
+
+## Contributing A Patch
+
+1. Submit an issue describing your proposed change to the repo in question.
+1. The repo owner will respond to your issue promptly.
+1. If your proposed change is accepted, and you haven't already done so, sign a Contributor License Agreement (see details above).
+1. Fork the desired repo, develop and test your code changes.
+1. Ensure that your code adheres to the existing style in the sample to which
+   you are contributing. Refer to the [Google Cloud Platform Samples Style
+   Guide](https://github.com/GoogleCloudPlatform/Template/wiki/style.html) for
+   the recommended coding standards.
+1. Ensure that your code has an appropriate set of unit tests which all pass.
+1. Submit a pull request!

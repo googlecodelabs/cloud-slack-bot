@@ -1,24 +1,44 @@
-# cloud-slack-bot
+# Build and Run a Containerized Slack Bot
 
-This folder contains the source code for a Google I/O 2016 codelab.
+This repository contains the source code for the [Build and Run a Containerized
+Slack Bot Google codelab][cloud-slack-bot-codelab].
 
-### License
+[cloud-slack-bot-codelab]: https://codelabs.developers.google.com/codelabs/cloud-slack-bot/index.htm
 
-```
-Copyright 2016 Google, Inc.
+## Resources
 
-Licensed to the Apache Software Foundation (ASF) under one or more contributor
-license agreements. See the NOTICE file distributed with this work for
-additional information regarding copyright ownership. The ASF licenses this
-file to you under the Apache License, Version 2.0 (the "License"); you may not
-use this file except in compliance with the License. You may obtain a copy of
-the License at
+### Codelabs and Samples
 
-http://www.apache.org/licenses/LICENSE-2.0
+- [Google codelabs][codelabs]
+- [Slack integrations on Google Cloud Platform samples][slack-samples]
+- [Node.js on Google Cloud Platform samples][nodejs-samples]
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-License for the specific language governing permissions and limitations under
-the License.
-```
+[codelabs]: https://g.co/codelabs
+[nodejs-samples]: https://github.com/GoogleCloudPlatform/nodejs-docs-samples
+[slack-samples]: https://github.com/GoogleCloudPlatform/slack-samples
+
+### Documentation
+
+- [Google Cloud Platform][cloud]
+- [Google Container Engine][container-engine]
+- [Google Container Registry][container-registry]
+- [Kubernetes][kubernetes]
+- [Slack API][slack-api]
+
+[cloud]: https://cloud.google.com/
+[container-engine]: https://cloud.google.com/container-engine/
+[container-registry]: https://cloud.google.com/container-registry/
+[kubernetes]: http://kubernetes.io/
+[slack-api]: https://api.slack.com/
+
+## Contributing
+
+Contributions welcome!
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+Apache Version 2.0
+
+See [LICENSE](LICENSE).
