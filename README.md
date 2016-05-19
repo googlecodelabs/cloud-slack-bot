@@ -1,9 +1,9 @@
-# Build and Run a Containerized Slack Bot
+# Build a Slack Bot with Node.js on Kubernetes
 
-This repository contains the source code for the [Build and Run a Containerized
-Slack Bot Google codelab][cloud-slack-bot-codelab].
+This repository contains the source code for the [Build a Slack Bot with Node.js on Kubernetes
+Google codelab][cloud-slack-bot-codelab].
 
-[cloud-slack-bot-codelab]: https://codelabs.developers.google.com/codelabs/cloud-slack-bot/index.htm
+[cloud-slack-bot-codelab]: https://codelabs.developers.google.com/codelabs/cloud-slack-bot/
 
 ## Resources
 
