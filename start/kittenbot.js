@@ -1,7 +1,7 @@
 /* *****************************************************************************
 Copyright 2016 Google Inc. All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the "License");
+Licensed under the Apache License, Version 2.0 (the "License")
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
@@ -17,20 +17,19 @@ limitations under the License.
 This is a sample Slack bot built with Botkit.
 */
 
-var Botkit = require('botkit');
-var fs = require('fs');
+var Botkit = require('botkit')
 
-var controller = Botkit.slackbot({debug: false});
-controller.spawn(
-    {
-      token: "your-slack-token"  // Edit this line!
-    }).startRTM(function (err) {
-  if (err) {
-    throw new Error(err);
-  }
-});
+var controller = Botkit.slackbot({debug: false})
+controller
+  .spawn({
+    token: 'your-slack-token' // Edit this line!
+  })
+  .startRTM(function (err) {
+    if (err) {
+      throw new Error(err)
+    }
+  })
 
 controller.hears(
-    ['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'],
-    function (bot, message) { bot.reply(message, 'Meow. :smile_cat:'); });
-
+  ['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'],
+  function (bot, message) { bot.reply(message, 'Meow. :smile_cat:') })

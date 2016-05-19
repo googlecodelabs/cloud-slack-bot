@@ -26,8 +26,7 @@ accept your pull requests.
 1. If your proposed change is accepted, and you haven't already done so, sign a Contributor License Agreement (see details above).
 1. Fork the desired repo, develop and test your code changes.
 1. Ensure that your code adheres to the existing style in the sample to which
-   you are contributing. Refer to the [Google Cloud Platform Samples Style
-   Guide](https://github.com/GoogleCloudPlatform/Template/wiki/style.html) for
-   the recommended coding standards.
+   you are contributing. Refer to the [Standard JS Code
+   Style](http://standardjs.com/) for the recommended coding standards.
 1. Ensure that your code has an appropriate set of unit tests which all pass.
 1. Submit a pull request!
