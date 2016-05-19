@@ -3,7 +3,11 @@
 This repository contains the source code for the [Build a Slack Bot with Node.js on Kubernetes
 Google codelab][cloud-slack-bot-codelab].
 
+[![Build Status][travis-status-image]][travis-status]
+
 [cloud-slack-bot-codelab]: https://codelabs.developers.google.com/codelabs/cloud-slack-bot/
+[travis-status]: https://travis-ci.org/googlecodelabs/cloud-slack-bot
+[travis-status-image]: https://travis-ci.org/googlecodelabs/cloud-slack-bot.svg?branch=master
 
 ## Resources
 
