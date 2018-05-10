@@ -4,7 +4,7 @@
   "description": "A sample Slack Botkit bot.",
   "main": "kittenbot.js",
   "dependencies": {
-    "botkit": "0.4.0"
+    "botkit": "^0.6"
   },
   "devDependencies": {},
   "scripts": {
