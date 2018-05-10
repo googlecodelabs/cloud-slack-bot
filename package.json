@@ -4,10 +4,10 @@
   "description": "A sample Slack Botkit bot.",
   "main": "kittenbot.js",
   "dependencies": {
-    "botkit": "0.1.1"
+    "botkit": "0.6.14"
   },
   "devDependencies": {
-    "standard": "^7.1.1"
+    "standard": "^11.0.1"
   },
   "scripts": {
     "test": "standard \"**/*.js\""
