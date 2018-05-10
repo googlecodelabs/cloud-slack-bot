@@ -1,5 +1,7 @@
 # Build a Slack Bot with Node.js on Kubernetes
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/googlecodelabs/cloud-slack-bot.svg)](https://greenkeeper.io/)
+
 This repository contains the source code for the [Build a Slack Bot with Node.js on Kubernetes
 Google codelab][cloud-slack-bot-codelab].
 
