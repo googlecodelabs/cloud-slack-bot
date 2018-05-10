@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "start/package.json",
+        "step-1-token-file/package.json",
+        "step-2-docker/package.json",
+        "step-3-kubernetes/package.json",
+        "step-4-update/package.json"
+      ]
+    }
+  }
+}
