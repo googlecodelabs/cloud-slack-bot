@@ -20,6 +20,6 @@ WORKDIR /src
 RUN npm install
 
 # Bundle app source.
-COPY kittenbot.js /src
+COPY ./step-2-docker/kittenbot.js /src
 
 CMD ["node", "/src/kittenbot.js"]
