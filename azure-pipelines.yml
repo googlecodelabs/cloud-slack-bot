@@ -13,5 +13,5 @@ variables:
   imageName: 'engops-slack-bot:$(build.buildId)'
 
 steps:
-- script: docker build -f Dockerfile -t $(imageName) .
+- script: docker build -f ./step-2-docker/Dockerfile -t $(imageName) .
   displayName: 'docker build'
