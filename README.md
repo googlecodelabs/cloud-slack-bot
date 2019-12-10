@@ -1,3 +1,7 @@
+> **Deprecation warning:** This codelab has not been updated to the latest version of the Slack API.
+>
+> See [Deploying a containerized web application](https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app) to learn about deploying web applications with Kubernetes Engine. Use the [Slack Events API](https://slack.dev/node-slack-sdk/events-api) to listen and respond to Slack messages with a web application.
+
 # Build a Slack Bot with Node.js on Kubernetes
 
 This repository contains the source code for the [Build a Slack Bot with Node.js on Kubernetes
