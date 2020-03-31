@@ -1,5 +1,5 @@
 /* *****************************************************************************
-Copyright 2016 Google Inc. All Rights Reserved.
+Copyright 2020 Google Inc. All Rights Reserved.
 
 Licensed under the Apache License, Version 2.0 (the "License")
 you may not use this file except in compliance with the License.
@@ -17,19 +17,54 @@ limitations under the License.
 This is a sample Slack bot built with Botkit.
 */
 
-var Botkit = require('botkit')
+const {Botkit} = require('botkit');
+const {SlackAdapter, SlackEventMiddleware} = require(
+    'botbuilder-adapter-slack');
+const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 
-var controller = Botkit.slackbot({debug: false})
-controller
-  .spawn({
-    token: 'your-slack-token' // Edit this line!
-  })
-  .startRTM(function (err) {
-    if (err) {
-      throw new Error(err)
-    }
-  })
 
-controller.hears(
-  ['hello', 'hi'], ['direct_message', 'direct_mention', 'mention'],
-  function (bot, message) { bot.reply(message, 'Meow. :smile_cat:') })
+/**
+ * Returns the secret string from Google Cloud Secret Manager
+ * @param {string} name The name of the secret.
+ * @return {string} The string value of the secret.
+ */
+async function accessSecretVersion(name) {
+  const client = new SecretManagerServiceClient();
+  const projectId = process.env.PROJECT_ID;
+  const [version] = await client.accessSecretVersion({
+    name: `projects/${projectId}/secrets/${name}/versions/1`,
+  });
+
+  // Extract the payload as a string.
+  const payload = version.payload.data.toString('utf8');
+
+  return payload;
+}
+
+
+/**
+ * Asynchronous function to initialize kittenbot.
+ */
+async function kittenbotInit() {
+  const adapter = new SlackAdapter({
+    clientSigningSecret: await accessSecretVersion('client-signing-secret'),
+    botToken: await accessSecretVersion('bot-token'),
+  });
+
+  adapter.use(new SlackEventMiddleware());
+
+  const controller = new Botkit({
+    webhook_uri: '/api/messages',
+    adapter: adapter,
+  });
+
+  controller.ready(() => {
+    controller.hears(['hello', 'hi'], ['message', 'direct_message'],
+        async (bot, message) => {
+          await bot.reply(message, 'Meow. :smile_cat:');
+        });
+  });
+}
+
+kittenbotInit();
+

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM node:7
+FROM node:12-slim
 
 # Install app dependencies.
 COPY package.json /src/package.json
@@ -22,4 +22,4 @@ RUN npm install
 # Bundle app source.
 COPY kittenbot.js /src
 
-CMD ["node", "/src/kittenbot.js"]
+CMD ["node", "kittenbot"]

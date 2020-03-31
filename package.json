@@ -1,12 +1,18 @@
 {
   "name": "cloud-slack-bot-example",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A sample Slack Botkit bot.",
   "main": "kittenbot.js",
   "dependencies": {
-    "botkit": "0.7.0"
+    "@google-cloud/secret-manager": "^2.1.0",
+    "assert": "^2.0.0",
+    "botbuilder-adapter-slack": "^1.0.10",
+    "botkit": "^4.8.1",
+    "mocha": "^7.1.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
     "standard": "^7.1.1"
   },
   "scripts": {
