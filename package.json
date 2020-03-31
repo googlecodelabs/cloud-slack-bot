@@ -7,8 +7,7 @@
     "@google-cloud/secret-manager": "^2.1.0",
     "assert": "^2.0.0",
     "botbuilder-adapter-slack": "^1.0.10",
-    "botkit": "^4.8.1",
-    "mocha": "^7.1.1"
+    "botkit": "^4.8.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
