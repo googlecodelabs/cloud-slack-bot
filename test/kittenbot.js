@@ -16,52 +16,51 @@ limitations under the License.
 
 This is a sample Slack bot built with Botkit.
 */
-const assert = require('assert');
-
+const assert = require('assert')
 
 /**
  * Function to test Botkit Controller Configurations.
  */
-function testBotkitController() {
-  const {Botkit, BotkitConversation} = require('botkit');
-  const {SlackAdapter, SlackEventMiddleware} = require(
-      'botbuilder-adapter-slack');
+function testBotkitController () {
+  const { Botkit, BotkitConversation } = require('botkit')
+  const { SlackAdapter, SlackEventMiddleware } = require(
+    'botbuilder-adapter-slack')
 
   const adapter = new SlackAdapter({
     enable_incomplete: true,
-    debug: true,
-  });
+    debug: true
+  })
 
-  adapter.use(new SlackEventMiddleware());
+  adapter.use(new SlackEventMiddleware())
 
   const controller = new Botkit({
     webhook_uri: '/api/messages',
-    adapter: adapter,
-  });
+    adapter: adapter
+  })
 
   // test controller version
-  assert(parseInt(controller.version) >= 4);
+  assert(parseInt(controller.version) >= 4)
 
   // test webhook endpoint
-  const config = controller.getConfig();
-  assert(config.webhook_uri == '/api/messages');
+  const config = controller.getConfig()
+  assert(config.webhook_uri === '/api/messages')
 
   // testBotkitConversation
-  const convo = new BotkitConversation('test-dialog', controller);
-  controller.addDialog(convo);
-  assert('test-dialog' in controller.dialogSet.dialogs);
+  const convo = new BotkitConversation('test-dialog', controller)
+  controller.addDialog(convo)
+  assert('test-dialog' in controller.dialogSet.dialogs)
 
-  controller.shutdown();
+  controller.shutdown()
 }
 
 /**
  * Function to test Secret Manager Client.
  */
-function testSecretManagerClient() {
-  const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
-  const client = new SecretManagerServiceClient();
-  assert(client);
+function testSecretManagerClient () {
+  const { SecretManagerServiceClient } = require('@google-cloud/secret-manager')
+  const client = new SecretManagerServiceClient()
+  assert(client)
 };
 
-testBotkitController();
-testSecretManagerClient();
+testBotkitController()
+testSecretManagerClient()
