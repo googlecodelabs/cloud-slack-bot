@@ -35,3 +35,5 @@ node_modules
 
 # Generated files with project-specific information
 slack-token
+
+.DS_Store
