@@ -140,7 +140,7 @@ function createKittenDialog(controller) {
   );
 
   convo.addMessage("Thanks for responding!", "ask_again");
-  convo.addAction("kitten-delivery", "ask_again");
+  convo.addAction("ask_question", "ask_again");
 
   convo.addMessage(
     {
