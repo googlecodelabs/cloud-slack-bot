@@ -119,7 +119,7 @@ function createKittenDialog(controller) {
     },
   ]);
 
-  convo.askQuestion(
+  convo.addQuestion(
     "Does anyone else want to join a zoom room?",
     [
       {
