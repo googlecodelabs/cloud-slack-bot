@@ -136,6 +136,7 @@ function createKittenDialog(controller) {
         },
       },
     ],
+    "response",
     "ask_question"
   );
 
