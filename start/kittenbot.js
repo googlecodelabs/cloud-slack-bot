@@ -67,7 +67,7 @@ async function kittenbotInit() {
     console.log("ENTERED READY");
     // START: listen for cat emoji delivery
     controller.hears(
-      ["Hello everyone! :zoomba:"],
+      ["Hello everyone! :zoomba:", "test", "hi"],
       ["message", "direct_message"],
       async (bot, message) => {
         // Don't respond to self
@@ -87,7 +87,6 @@ async function kittenbotInit() {
         }
       }
     );
-    // END: listen for cat emoji delivery
   });
 }
 
@@ -108,11 +107,8 @@ function createKittenDialog(controller) {
       pattern: "yes",
       handler: async (response, convo, bot) => {
         numGoing++;
-        console.log("we got a yes");
-        if (numGoing >= threshhold) {
-          console.log("Activating zoom....");
-          await convo.gotoThread("yes_zoom");
-        }
+        console.log("we got the first yes");
+        await convo.gotoThread("ask_question");
       },
     },
     {
@@ -121,13 +117,30 @@ function createKittenDialog(controller) {
         await convo.gotoThread("no_zoom");
       },
     },
-    {
-      default: true,
-      handler: async (response, convo, bot) => {
-        await convo.gotoThread("no_zoom");
-      },
-    },
   ]);
+
+  convo.askQuestion(
+    "Does anyone else want to join a zoom room?",
+    [
+      {
+        pattern: "yes",
+        handler: async (response, convo, bot) => {
+          numGoing++;
+          console.log("we got more yesese");
+          if (numGoing >= threshhold) {
+            console.log("Activating zoom....");
+            await convo.gotoThread("yes_zoom");
+          } else {
+            await convo.gotoThread("ask_again");
+          }
+        },
+      },
+    ],
+    "ask_question"
+  );
+
+  convo.addMessage("Thanks for responding!", "ask_again");
+  convo.addAction("kitten-delivery", "ask_again");
 
   convo.addMessage(
     {
