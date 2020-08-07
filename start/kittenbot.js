@@ -75,7 +75,9 @@ async function kittenbotInit() {
           setTimeout(function () {
             if (numGoing < threshhold) {
               // Not enough people said yes in the timespan
-              await convo.gotoThread("no_zoom");
+              async (response, convo, bot) => {
+                await convo.gotoThread("no_zoom");
+              };
             }
           }, 10000); //600000
           await bot.startConversationInChannel(message.channel, message.user);
@@ -125,7 +127,8 @@ function createKittenDialog(controller) {
 
   convo.addMessage(
     {
-      text: "zoom link here!!!!!! https://atlassian.zoom.us/j/96856753417?pwd=QnppS2ovRXVtc2hJRG93ZjlqWklvUT09",
+      text:
+        "zoom link here!!!!!! https://atlassian.zoom.us/j/96856753417?pwd=QnppS2ovRXVtc2hJRG93ZjlqWklvUT09",
       // attachments: [
       //   {
       //     fallback: "Chihuahua Bubbles - https://youtu.be/s84dBopsIe4",
