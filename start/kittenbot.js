@@ -64,6 +64,7 @@ async function kittenbotInit() {
 
   // Controller is ready
   controller.ready(() => {
+    console.log("ENTERED READY");
     // START: listen for cat emoji delivery
     controller.hears(
       ["Hello everyone! :zoomba:"],
@@ -72,7 +73,7 @@ async function kittenbotInit() {
         // Don't respond to self
         if (message.bot_id !== message.user) {
           numGoing = 0;
-          log("This is logging!!!");
+          console.log("This is logging!!!");
           setTimeout(function () {
             if (numGoing < threshhold) {
               // Not enough people said yes in the timespan
@@ -107,9 +108,9 @@ function createKittenDialog(controller) {
       pattern: "yes",
       handler: async (response, convo, bot) => {
         numGoing++;
-        log("we got a yes");
+        console.log("we got a yes");
         if (numGoing >= threshhold) {
-          log("Activating zoom....");
+          console.log("Activating zoom....");
           await convo.gotoThread("yes_zoom");
         }
       },
