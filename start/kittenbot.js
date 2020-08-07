@@ -72,6 +72,7 @@ async function kittenbotInit() {
         // Don't respond to self
         if (message.bot_id !== message.user) {
           numGoing = 0;
+          log("This is logging!!!");
           setTimeout(function () {
             if (numGoing < threshhold) {
               // Not enough people said yes in the timespan
@@ -106,7 +107,9 @@ function createKittenDialog(controller) {
       pattern: "yes",
       handler: async (response, convo, bot) => {
         numGoing++;
+        log("we got a yes");
         if (numGoing >= threshhold) {
+          log("Activating zoom....");
           await convo.gotoThread("yes_zoom");
         }
       },
