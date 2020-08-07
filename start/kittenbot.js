@@ -73,15 +73,18 @@ async function kittenbotInit() {
         // Don't respond to self
         if (message.bot_id !== message.user) {
           numGoing = 0;
-          console.log("This is logging!!!");
+          console.log("Heard the hello everyone");
           setTimeout(function () {
+            console.log("Timeout check complete!");
             if (numGoing < threshhold) {
+              console.log("Not enough people said yes");
               // Not enough people said yes in the timespan
               async (response, convo, bot) => {
                 await convo.gotoThread("no_zoom");
               };
             }
           }, 10000); //600000
+          console.log("begining kitten delivery");
           await bot.startConversationInChannel(message.channel, message.user);
           return bot.beginDialog("kitten-delivery");
         }
@@ -101,7 +104,7 @@ let numGoing = 0;
  */
 function createKittenDialog(controller) {
   const convo = new BotkitConversation("kitten-delivery", controller);
-
+  console.log("Start of the createKittenDialog");
   convo.ask("Do you want to join a zoom room?", [
     {
       pattern: "yes",
