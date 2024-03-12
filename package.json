@@ -6,7 +6,7 @@
   "dependencies": {
     "@google-cloud/secret-manager": "^3.6.0",
     "assert": "2.0.0",
-    "axios": ">=0.21.1",
+    "axios": ">=0.28.0",
     "botbuilder-adapter-slack": "^1.0.10",
     "botkit": "^4.8.1"
   },
